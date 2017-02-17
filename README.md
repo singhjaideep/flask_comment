@@ -3,6 +3,7 @@
 Simple commenting system based on Flask
 
 #TODO:
-- db backed database, one table required
-- one of row will be commentsectionid (one per comment area)
-- captcha
+- ~~db backed database, one table required~~
+- ~~one of row will be commentsectionid (one per comment area)~~
+- add recaptcha
+- salt hashed values

@@ -1,7 +1,7 @@
 # A very simple Flask Hello World app for you to get started with... https://blog.pythonanywhere.com/121/
 from flask import Flask, redirect, render_template, request, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
-import secrets,datetime
+import secrets,datetime,hashlib
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
@@ -26,17 +26,19 @@ class Comment(db.Model):
     name = db.Column(db.String(40))
     timestamp = db.Column(db.DateTime)
 
-@app.route("/", methods=["GET", "POST"])
-def index():
+@app.route("/<hexval>/", methods=["GET", "POST"])
+def index(hexval):
+    hash_object = hashlib.sha1(hexval.encode())
+    hashedval = hash_object.hexdigest()
     if request.method == "GET":
-        return render_template("main_page.html", comments=Comment.query.all())
+        return render_template("main_page.html", comments=Comment.query.filter_by(pid=hashedval).all())
 
     comment = Comment(content=request.form["contents"],
-        pid='7C39B8C26ED6353F02BBE760C557ABD83B5FAFB2',
-        name='Mr. Commentor',
+        pid=hashedval,
+        name=request.form["name"],
         timestamp=datetime.datetime.now(),
     )
     db.session.add(comment)
     db.session.commit()
-    return redirect(url_for('index'))
+    return redirect(url_for('index',hexval=hexval))
 
