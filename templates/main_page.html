@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/comments.css') }}">
     </head>
-
     <body id="index" class="home">
         <section id="comments" class="body">
-	        <header><h2>Comments</h2></header>
-
+	        <!--<header><h2>Comments</h2></header>-->
             <ol id="posts-list" class="hfeed has-comments">
               <li class="no-comments">Be the first to add a comment.</li>
                 {% for comment in comments %}
@@ -17,12 +15,10 @@
                       <abbr class="published" title="{{ comment.timestamp }}">
                         {{ comment.timestamp }}
                       </abbr>
-
                       <address class="vcard author">
                         By <a class="url fn" href="#">{{ comment.name }}</a>
                       </address>
                     </footer>
-
                     <div class="entry-content">
                       <p>{{ comment.content }}</p>
                     </div>
@@ -31,20 +27,16 @@
             </ol>
             <div id="respond">
               <form action="." method="POST" id="commentform">
-
+                {% if error %}
+                    <p>{{ error }}</p>
+                {% endif %}
                 <label for="comment_author" class="required">Your name</label>
-                <input type="text" name="name" id="comment_author" value="" tabindex="1" required="required">
-
-                <label for="email" class="required">Email.. will be in future Captcha</label>
-                <input type="email" name="email" id="email" value="" tabindex="2" required="required">
-
+                <input type="text" name="name" id="comment_author" value="" required="required" style='width:28em'>
+                {{ recaptcha }}
                 <label for="comment" class="required">Your message</label>
-                <textarea name="contents" id="comment" rows="10" tabindex="4"  required="required"></textarea>
-
+                <textarea name="contents" id="comment" rows="10" required="required" style='width:28em'></textarea>
                 <input name="submit" type="submit" value="Submit comment" />
-
               </form>
-
             </div>
         </section>
     </body>

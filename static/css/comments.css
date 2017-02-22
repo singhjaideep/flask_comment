@@ -26,7 +26,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 /* Blog Index */
 #posts-list {list-style: none; margin: 0;}
-#posts-list .hentry {padding-left: 200px; position: relative;}
+#posts-list .hentry {padding-left: 100px; position: relative;}
 #posts-list .hentry:hover {
 	background: #15A9DB;
 	color: #fff;
@@ -49,7 +49,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
-	width: 760px;
+	width: 400px;
 
 	border-radius: 10px;
 	-moz-border-radius: 10px;
