@@ -17,6 +17,8 @@ http://greatunknown.pythonanywhere.com/helloworld/
 # TODO:
 - ~~db backed database, one table required~~
 - ~~one of row will be commentsectionid (one per comment area)~~
-- add recaptcha
+- ~~add recaptcha~~
 - salt hashed values
-- pretty it up a bit
+- Fix CSS
+- Integrate with blog
+- Dockerize
