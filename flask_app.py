@@ -29,9 +29,9 @@ db = SQLAlchemy(app)
 class Comment(db.Model):
     __tablename__ = "comments"
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(4096))
+    content = db.Column(db.String(140))
     pid = db.Column(db.String(40))
-    name = db.Column(db.String(40))
+    name = db.Column(db.String(9))
     timestamp = db.Column(db.DateTime)
 
 #View

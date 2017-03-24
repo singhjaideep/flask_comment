@@ -1,3 +1,25 @@
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 /* Paragraphs */
 p {margin-bottom: 1.143em;}
 * p:last-child {margin-bottom: 0;}
@@ -25,7 +47,10 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #posts-list footer address {display: block;}
 
 /* Blog Index */
-#posts-list {list-style: none; margin: 0;}
+#posts-list {
+    list-style: none;
+    margin: 1em 1em 1em -3em;
+}
 #posts-list .hentry {padding-left: 100px; position: relative;}
 #posts-list .hentry:hover {
 	background: #15A9DB;
@@ -34,7 +59,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 #posts-list footer {
 	left: 10px;
-	position: absolute;
+	position: relative;
 	top: 1.5em;
 	width: 190px;
 }
@@ -65,7 +90,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 }
 
 #respond {
-  margin-top: 40px;
+  margin-top: 1px;
 }
 
 #respond input[type='text'],
