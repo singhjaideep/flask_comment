@@ -18,6 +18,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Open sans', san-serif;
 }
 
 /* Paragraphs */
@@ -36,7 +37,7 @@ ol {
 /* Blog */
 .hentry {
 	border-bottom: 1px solid #eee;
-	padding: 1.5em 0;
+	padding: .5em 0;
 }
 li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #content > .hentry {padding: 1em 0;}
@@ -49,16 +50,15 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 /* Blog Index */
 #posts-list {
     list-style: none;
-    margin: 1em 1em 1em -3em;
+    margin: 0;
 }
-#posts-list .hentry {padding-left: 100px; position: relative;}
+#posts-list .hentry {position: relative;}
 #posts-list .hentry:hover {
 	background: #15A9DB;
 	color: #fff;
 }
 
 #posts-list footer {
-	left: 10px;
 	position: relative;
 	top: 1.5em;
 	width: 190px;
@@ -73,7 +73,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
   background: #fff;
 	margin-bottom: 2em;
 	overflow: hidden;
-	padding: 20px 20px;
+	padding: 0 20px;
 	width: 400px;
 
 	border-radius: 10px;
@@ -90,7 +90,8 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 }
 
 #respond {
-  margin-top: 1px;
+  padding-top: 1em;
+  border-top: 1px solid #efefef;
 }
 
 #respond input[type='text'],
